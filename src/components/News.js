@@ -20,7 +20,7 @@ const News =(props)=> {
  const update=async()=>{
     props.setprogress(0);
   let url=(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page}&apikey=${props.apikey}&pageSize=${props.pageno}`,{
-      method: 'post',
+      method: 'GET',
       headers: {'Content-Type': 'application/json'},
   });
  
@@ -59,7 +59,7 @@ const handlenext = async()=>{
 
   });
   const url=(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${this.state.page+1}&pageSize=${props.pageno}`,{
-  method: 'post',
+  method: 'GET',
       headers: {'Content-Type': 'application/json'},
   });
   this.setState({
