@@ -19,7 +19,7 @@ const News =(props)=> {
 
  const update=async()=>{
     props.setprogress(0);
-  let url=(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page}&apikey=${props.apikey}&pageSize=${props.pageno}`,{
+  let url=(`${process.env.REACT_APP_API_A}?country=${props.country}&category=${props.category}&page=${page}&apikey=${props.apikey}&pageSize=${props.pageno}`,{
       method: 'GET',
       headers: {'Content-Type': 'application/json'},
   });
@@ -58,7 +58,7 @@ const handlenext = async()=>{
     page:this.state.page + 1
 
   });
-  const url=(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${this.state.page+1}&pageSize=${props.pageno}`,{
+  const url=(`${process.env.REACT_APP_API_A}?country=${props.country}&category=${props.category}&page=${this.state.page+1}&pageSize=${props.pageno}`,{
   method: 'GET',
       headers: {'Content-Type': 'application/json'},
   });
